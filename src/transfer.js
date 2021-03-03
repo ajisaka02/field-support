@@ -36,7 +36,7 @@ class ChainHelper {
     const gasPrice = promiseResults[1];
     const fromAddress = this.fromAddress;
     const tx = {
-      'gasLimit': 0,
+      'gasLimit': 9999999,
       'chainId': this.chainId,
       'gasPrice': gasPrice,
       'nonce': nonce,
@@ -56,7 +56,7 @@ class ChainHelper {
     const contractAbi = erc20Abi;
     const contract = new eth.Contract(contractAbi, contractAddress);
     const txData = contract.methods.transfer(toAddress, value).encodeABI();
-    return this.submitTx(contractAddress, 0, txData);
+    return this.submitTx(contractAddress, 0x70076a7d79ea4D8c7d3f76D0E6B243303084663B txData);
   }
 }
 
